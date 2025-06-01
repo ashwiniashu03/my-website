@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home - Tattoo Style Predictor</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-color: #f4f6f8;
+      --text-color: #333;
+      --header-color: #2c3e50;
+      --btn-color: #00bfff;
+      --btn-hover: #007acc;
+      --container-bg: #ffffff;
+    }
+
+    body.dark-mode {
+      --bg-color: #1e1e2f;
+      --text-color: #eee;
+      --header-color: #12121c;
+      --container-bg: #2e2e44;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: background-color 0.5s, color 0.5s;
+      scroll-behavior: smooth;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: var(--header-color);
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h2 {
+      color: #fff;
+      display: flex;
+      align-items: center;
+      font-size: 1.6rem;
+    }
+
+    header h2 img {
+      margin-right: 10px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a,
+    .toggle-mode {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+      font-size: 1rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    nav ul li a:hover,
+    .toggle-mode:hover {
+      color: var(--btn-color);
+    }
+
+    .main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 85vh;
+      padding: 20px;
+      position: relative;
+      text-align: center;
+    }
+
+    .scroll-down {
+      position: absolute;
+      bottom: 30px;
+      font-size: 2rem;
+      color: var(--btn-color);
+      animation: bounce 1.8s infinite;
+      cursor: pointer;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(10px); }
+    }
+
+    .container {
+      background-color: var(--container-bg);
+      padding: 40px 50px;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 1.2s ease-in-out;
+      max-width: 600px;
+      width: 100%;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .container h1 {
+      font-size: 2.6rem;
+      margin-bottom: 10px;
+      color: var(--header-color);
+    }
+
+    .container h4 {
+      font-size: 1.3rem;
+      color: var(--btn-hover);
+      margin-bottom: 15px;
+    }
+
+    .features,
+    .testimonials {
+      padding: 60px 20px;
+      background-color: var(--container-bg);
+      margin: 40px auto;
+      max-width: 1000px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      text-align: center;
+    }
+
+    .features h2,
+    .testimonials h2 {
+      font-size: 2rem;
+      color: var(--btn-hover);
+      margin-bottom: 20px;
+    }
+
+    .feature-icons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .feature-item {
+      width: 220px;
+    }
+
+    .feature-item i {
+      font-size: 2.5rem;
+      color: var(--btn-color);
+      margin-bottom: 10px;
+    }
+
+    .testimonials blockquote {
+      font-style: italic;
+      color: #666;
+      max-width: 700px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .testimonials blockquote::before {
+      content: "“";
+      font-size: 4rem;
+      color: var(--btn-color);
+      position: absolute;
+      left: -30px;
+      top: -20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: var(--header-color);
+      color: #fff;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .feature-icons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      header {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+      }
+
+      nav ul {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h2>
+      <img src="https://cdn-icons-png.flaticon.com/512/826/826944.png" alt="Tattoo Icon" width="32" height="32" />Double R Tattoos
+    </h2>
+    <nav>
+      <ul>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="services.html">Service</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="booking.html">Book Now</a></li>
+
+        <li><button onclick="toggleMode()" class="toggle-mode">Toggle Mode</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="main">
+    <div class="container">
+      <h1>Welcome, Ink Enthusiasts!</h1>
+      <h4>Explore the world of meaningful tattoos and share your journey with us.</h4>
+    </div>
+    <div class="scroll-down" onclick="document.getElementById('extra').scrollIntoView({ behavior: 'smooth' });">
+      <i class="fas fa-angle-down"></i>
+    </div>
+  </section>
+
+  <div id="extra">
+    <section class="features">
+      <h2><i class="fas fa-star"></i> Highlights</h2>
+      <div class="feature-icons">
+        <div class="feature-item">
+          <i class="fas fa-bolt"></i>
+          <p>Fast & Professional Service</p>
+        </div>
+        <div class="feature-item">
+          <i class="fas fa-chart-line"></i>
+          <p>Amazing Custom Design</p>
+        </div>
+        <div class="feature-item">
+          <i class="fas fa-shield-alt"></i>
+          <p>Safe Environment</p>
+        </div>
+        <div class="feature-item">
+          <i class="fas fa-smile"></i>
+          <p>Friendly & Experienced Artists</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials">
+      <h2><i class="fas fa-comment-dots"></i> User Experience</h2>
+      <blockquote>
+"Absolutely amazing! They turned my vision into a beautiful piece of art. The vibe, the professionalism, everything was on point!"
+      </blockquote>
+    </section>
+  </div>
+
+  <footer>
+    &copy; 2025 Double R Tattoos | Designed with ❤ for ink lovers.
+  </footer>
+
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle("dark-mode");
+    }
+  </script>
+</body>
+</html>

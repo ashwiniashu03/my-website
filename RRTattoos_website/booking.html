@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book a Tattoo - Double R Tattoos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f8f8f8;
+      padding: 40px;
+      color: #333;
+    }
+
+    .form-container {
+      max-width: 500px;
+      margin: auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #00bfff;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 18px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    button {
+      background-color: #00bfff;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    button:hover {
+      background-color: #007acc;
+    }
+
+    .back-link {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .back-link a {
+      color: #00bfff;
+      text-decoration: none;
+    }
+
+    .back-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Book Your Tattoo Session</h2>
+    <form action="https://formsubmit.co/ashwiniswathishivu@gmail.com" method="POST">
+
+      <!-- Replace YOUR_EMAIL@example.com with your real email -->
+
+      <input type="hidden" name="_next" value="thankyou.html">
+      <input type="hidden" name="_captcha" value="false">
+
+      <label for="name">Full Name</label>
+      <input type="text" name="name" required />
+
+      <label for="email">Email Address</label>
+      <input type="email" name="email" required />
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" name="phone" required />
+
+      <label for="style">Tattoo Style</label>
+      <select name="style" required>
+        <option value="">Choose Style</option>
+        <option value="Minimalist">Minimalist</option>
+        <option value="Traditional">Traditional</option>
+        <option value="Tribal">Tribal</option>
+        <option value="Realism">Realism</option>
+        <option value="Watercolor">Watercolor</option>
+      </select>
+
+      <label for="message">Describe Your Idea</label>
+      <textarea name="message" rows="4" required></textarea>
+
+      <button type="submit">Submit Booking</button>
+    </form>
+
+    <div class="back-link">
+      <a href="index.html">&larr; Back to Home</a>
+    </div>
+  </div>
+</body>
+</html>
